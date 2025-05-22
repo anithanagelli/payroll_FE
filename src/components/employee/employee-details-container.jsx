@@ -1,5 +1,4 @@
-"use client"
-
+//employee-details-container.jsx
 import { useState } from "react"
 import { X } from "lucide-react"
 import EmployeePersonalTab from "./employee-personal-tab.jsx"
@@ -8,15 +7,17 @@ import EmployeePayTab from "./employee-pay-tab.jsx"
 import EmployeeTaxTab from "./employee-tax-tab.jsx"
 import EmployeeNITab from "./employee-ni-tab.jsx"
 import EmployeePensionTab from "./employee-pension-tab.jsx"
+import EmployeeStarterDataTab from "./employee-starterData-tab.jsx"
+
 
 const EmployeeDetailsContainer = ({ employee, setShowEmployeeDetailsInContainer }) => {
   const [activeTab, setActiveTab] = useState("Personal")
 
   return (
-    <div className="bg-white rounded-md shadow-lg border">
+    <div className="bg-white rounded-md shadow-lg border mx-auto max-w-[800px] w-full mt-10 px-4">
       <div className="flex justify-between items-center p-2 border-b">
         <h3 className="text-sm font-medium">
-          Employee Details - {employee.surname}, {employee.forename}
+          Employee Details - {employee.surname} {employee.forename}
         </h3>
         <button onClick={() => setShowEmployeeDetailsInContainer(false)} className="text-gray-500 hover:text-gray-700">
           <X size={16} />
@@ -59,8 +60,15 @@ const EmployeeDetailsContainer = ({ employee, setShowEmployeeDetailsInContainer 
           className={`px-3 py-1 text-xs ${activeTab === "Pension" ? "bg-gray-200" : ""}`}
           onClick={() => setActiveTab("Pension")}
         >
-          Pension
+         Auto-enrolment pensions
         </button>
+        {/* <button
+          className={`px-3 py-1 text-xs ${activeTab === "StarterData" ? "bg-gray-200" : ""}`}
+          onClick={() => setActiveTab("StarterData")}
+        >
+          Starter data
+        </button> */}
+
       </div>
 
       {/* Tab Content */}
@@ -71,16 +79,17 @@ const EmployeeDetailsContainer = ({ employee, setShowEmployeeDetailsInContainer 
         {activeTab === "Tax" && <EmployeeTaxTab employee={employee} />}
         {activeTab === "NI" && <EmployeeNITab employee={employee} />}
         {activeTab === "Pension" && <EmployeePensionTab employee={employee} />}
+        {/* {activeTab === "StarterData" && <EmployeeStarterDataTab employee={employee} />} */}
       </div>
 
       {/* Dialog Footer */}
-      <div className="flex justify-between p-2 border-t">
-        <div>
+      <div className="flex justify-end p-2 border-t">
+        {/* <div>
           <button className="border rounded px-3 py-1 text-xs mr-2">Notes</button>
           <button className="border rounded px-3 py-1 text-xs">Print</button>
-        </div>
+        </div> */}
         <div>
-          <button className="border rounded px-3 py-1 text-xs mr-2">Help</button>
+          {/* <button className="border rounded px-3 py-1 text-xs mr-2">Help</button> */}
           <button
             className="border rounded px-3 py-1 text-xs mr-2 bg-blue-50"
             onClick={() => setShowEmployeeDetailsInContainer(false)}

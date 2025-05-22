@@ -1,3 +1,4 @@
+//tax-office-tab.jsx
 const TaxOfficeTab = () => {
   return (
     <div className="grid grid-cols-2 gap-4">
@@ -5,15 +6,15 @@ const TaxOfficeTab = () => {
         <div className="mt-2 mb-3">
           <label className="block text-xs mb-1">HMRC References</label>
         </div>
-        <div className="">
+        <div className="mb-3">
           <label className="block text-xs mb-1">PAYE reference</label>
           <input type="text" className="w-full border rounded p-1 text-xs" />
         </div>
-        <div className="">
+        <div className="mb-3">
           <label className="block text-xs mb-1">Accounts office reference</label>
           <input type="text" className="w-full border rounded p-1 text-xs" />
         </div>
-        <div className="">
+        <div className="mb-3">
           <label className="block text-xs mb-1">Payment method</label>
           <select className="w-full border rounded p-1 text-xs">
             <option>Cheque</option>
@@ -21,11 +22,11 @@ const TaxOfficeTab = () => {
             <option>Direct Debit</option>
           </select>
         </div>
-        <div className="">
+        <div className="mb-3">
           <label className="block text-xs mb-1">Unique Tax Ref.</label>
           <input type="text" className="w-full border rounded p-1 text-xs" />
         </div>
-        <div className="">
+        <div className="mb-3">
           <label className="block text-xs mb-1">Corporation Tax Ref.</label>
           <input type="text" className="w-full border rounded p-1 text-xs" />
         </div>
@@ -47,7 +48,7 @@ const TaxOfficeTab = () => {
             <span className="text-xs">No RTI due warnings</span>
           </div>
           <div className="flex items-center mb-2">
-            <input type="checkbox" className="mr-2" checked />
+            <input type="checkbox" className="mr-2"/>
             <span className="text-xs">Claim NIC Allowance</span>
           </div>
         </div>

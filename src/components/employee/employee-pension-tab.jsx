@@ -1,19 +1,19 @@
-"use client"
-
+//employee-pension-tab.jsx
 const EmployeePensionTab = ({ employee }) => {
   return (
     <div className="grid grid-cols-2 gap-4">
       <div>
         <div className="mb-3">
-          <label className="block text-xs mb-1">Pension scheme</label>
+          <label className="block text-xs mb-3">Pension scheme</label>
           <select className="w-full border rounded p-1 text-xs">
             <option value="none">None</option>
             <option value="nest">NEST</option>
+            <option value="nest">Smart</option>
             <option value="other">Other</option>
           </select>
         </div>
         <div className="mb-3">
-          <label className="block text-xs mb-1">Auto-enrolment status</label>
+          <label className="block text-xs mb-3">Auto-enrolment status</label>
           <select className="w-full border rounded p-1 text-xs">
             <option value="eligible">Eligible jobholder</option>
             <option value="non-eligible">Non-eligible jobholder</option>
@@ -21,7 +21,7 @@ const EmployeePensionTab = ({ employee }) => {
           </select>
         </div>
         <div className="mb-3">
-          <label className="block text-xs mb-1">Auto-enrolment date</label>
+          <label className="block text-xs mb-">Auto-enrolment date</label>
           <input type="text" className="w-full border rounded p-1 text-xs" />
         </div>
         <div className="mb-3">

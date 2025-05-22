@@ -1,5 +1,4 @@
-"use client"
-
+//new-data-dialog.jsx
 const NewDataDialog = ({
   setShowNewDataDialog,
   setShowPayrollManagerDialog,
@@ -39,8 +38,8 @@ const NewDataDialog = ({
               <option value="2023-24">2023-24</option>
             </select>
           </div>
-          <div className="flex justify-between mt-6">
-            <button className="border rounded px-4 py-1 text-sm">Help</button>
+          <div className="flex justify-end mt-6">
+            {/* <button className="border rounded px-4 py-1 text-sm">Help</button> */}
             <div>
               <button
                 className="border rounded px-4 py-1 text-sm mr-2"

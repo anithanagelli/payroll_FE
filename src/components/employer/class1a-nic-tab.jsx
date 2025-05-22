@@ -1,12 +1,15 @@
+//class1a-nic-tab.jsx
 const Class1ANICTab = () => {
   return (
-    <div className="grid grid-cols-1">
+    <div>
       <div className="mb-3">
         <label className="block text-xs mb-1 font-medium">
           Enter adjustments if there are amounts not covered by entries for individual employees:
         </label>
       </div>
-      <div className="">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+      <div className="mb-3">
         <label className="block text-xs mb-1 font-medium">Amount to be added</label>
       </div>
       <div className="mb-3">
@@ -17,6 +20,8 @@ const Class1ANICTab = () => {
         <label className="block text-xs mb-1">Description</label>
         <input type="text" className="w-full border rounded p-1 text-xs" />
       </div>
+      </div>
+      <div>
       <div className="mb-3">
         <label className="block text-xs mb-1 font-medium">Amount to be deducted</label>
       </div>
@@ -28,6 +33,8 @@ const Class1ANICTab = () => {
         <label className="block text-xs mb-1">Description</label>
         <input type="text" className="w-full border rounded p-1 text-xs" />
       </div>
+      </div>
+    </div>
     </div>
   )
 }

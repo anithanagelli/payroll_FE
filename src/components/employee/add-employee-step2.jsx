@@ -1,5 +1,4 @@
-"use client"
-
+//add-employee-step2.jsx
 const AddEmployeeStep2 = ({ employeeData, handleInputChange }) => {
   return (
     <div className="space-y-4">
@@ -18,7 +17,7 @@ const AddEmployeeStep2 = ({ employeeData, handleInputChange }) => {
         <label className="block text-xs mb-1">Tax code</label>
         <input
           type="text"
-          className="w-full border rounded p-1 text-xs bg-red-100"
+          className="w-full border rounded p-1 text-xs"
           value={employeeData.taxCode}
           onChange={(e) => handleInputChange("taxCode", e.target.value)}
         />

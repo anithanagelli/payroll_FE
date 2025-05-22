@@ -1,6 +1,7 @@
+//auto-enrolment-tab.jsx
 const AutoEnrolmentTab = () => {
   return (
-    <div className="grid grid-cols-1">
+    <div className="grid grid-cols-1 gap-4">
       <div className="">
         <label className="block text-xs mb-1">Staging date / Duties start date</label>
         <input type="text" className="w-full border rounded p-1 text-xs" />
@@ -13,9 +14,11 @@ const AutoEnrolmentTab = () => {
         <label className="block text-xs mb-1">Defer/postpone until</label>
         <input type="text" className="w-full border rounded p-1 text-xs" />
       </div>
+      
       <div className="">
         <label className="block text-xs mb-1 font-medium">NEST</label>
       </div>
+      <div className="grid grid-cols-2 gap-4">
       <div className="">
         <label className="block text-xs mb-1">Online filing username</label>
         <input type="text" className="w-full border rounded p-1 text-xs" />
@@ -24,7 +27,8 @@ const AutoEnrolmentTab = () => {
         <label className="block text-xs mb-1">Online filing password</label>
         <input type="password" className="w-full border rounded p-1 text-xs" />
       </div>
-      <div className="mt-3">
+      <div>
+      <div className="">
         <div className="flex items-center mb-2">
           <input type="checkbox" className="mr-2" />
           <span className="text-xs">Use the same username and password in all data files</span>
@@ -48,6 +52,7 @@ const AutoEnrolmentTab = () => {
           <span className="text-xs">Ask for Payment Due Date</span>
         </div>
       </div>
+      </div>
       <div className="mb-3">
         <label className="block text-xs mb-1">
           Monthly earnings period (this only applies to monthly paid employees)
@@ -67,6 +72,7 @@ const AutoEnrolmentTab = () => {
           <option>1</option>
           <option>2</option>
         </select>
+      </div>
       </div>
     </div>
   )

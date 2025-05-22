@@ -1,5 +1,4 @@
-"use client"
-
+//add-employee-dialog.jsx
 import { useState } from "react"
 import { X } from "lucide-react"
 import AddEmployeeStep1 from "./add-employee-step1.jsx"
@@ -14,7 +13,7 @@ const AddEmployeeDialog = ({ onCancel, onSave }) => {
   const [employeeData, setEmployeeData] = useState({
     surname: "",
     forename: "",
-    gender: "male",
+    gender: "",
     dateOfBirth: "",
     niNumber: "",
     isDirector: false,
@@ -116,7 +115,7 @@ const AddEmployeeDialog = ({ onCancel, onSave }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="inset-0 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-md shadow-lg w-[500px]">
         <div className="flex justify-between items-center p-2 border-b">
           <h3 className="text-sm font-medium">Add a new employee</h3>
@@ -131,11 +130,11 @@ const AddEmployeeDialog = ({ onCancel, onSave }) => {
           {currentStep === 2 && <AddEmployeeStep2 employeeData={employeeData} handleInputChange={handleInputChange} />}
         </div>
 
-        <div className="flex justify-between p-2 border-t">
-          <button className="border rounded px-3 py-1 text-xs" onClick={() => {}}>
+        <div className="">
+          {/* <button className="border rounded px-3 py-1 text-xs" onClick={() => {}}>
             Help
-          </button>
-          <div>
+          </button> */}
+          <div className="flex justify-end p-2 border-t">
             {currentStep > 1 && (
               <button className="border rounded px-3 py-1 text-xs mr-2" onClick={handlePrev}>
                 &lt; Prev

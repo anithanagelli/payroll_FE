@@ -1,5 +1,4 @@
-"use client"
-
+//employee-pay-tab.jsx
 const EmployeePayTab = ({ employee }) => {
   return (
     <div className="grid grid-cols-2 gap-4">

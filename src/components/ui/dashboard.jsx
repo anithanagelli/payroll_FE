@@ -1,29 +1,28 @@
-"use client"
-
+//dashboard.jsx
 import { useState } from "react"
-import fileImg from "./images/folder_4673908.png"
-import payImg from "./images/checklist_7163024.png"
-import formImg from "./images/online-payment_9742048.png"
-import d4 from "./images/content-analysis-illustr-400x400.png"
-import d5 from "./images/download.jpg"
-import d13 from "./images/images (3).jpg"
-import d15 from "./images/images (5).jpg"
-import d16 from "./images/images.jpg"
-import d1 from "./images/images.png"
-import logo from "./images/payroll6.jpg"
+import fileImg from "/assets/folder_4673908.png"
+import payImg from "/assets/checklist_7163024.png"
+import formImg from "/assets/online-payment_9742048.png"
+import d4 from "/assets/content-analysis-illustr-400x400.png"
+import d5 from "/assets/download.jpg"
+import d13 from "/assets/images (3).jpg"
+import d15 from "/assets/images (5).jpg"
+import d16 from "/assets/images.jpg"
+import d1 from "/assets/images.png"
+import logo from "/assets/payroll6.jpg"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUserTie, faFileLines, faWrench } from "@fortawesome/free-solid-svg-icons"
-import NewDataDialog from "./new-data-dialog.jsx"
-import PayrollManagerDialog from "./payroll-manager-dialog.jsx"
-import EmployerDetailsContainer from "./employer-details-container.jsx"
-import FileMenu from "./file-menu.jsx"
-import EmployerMenu from "./employer-menu.jsx"
-import EmployeesMenu from "./employees-menu.jsx"
-import AddEmployeeDialog from "./add-employee-dialog.jsx"
-import NoEmployeesDialog from "./no-employees-dialog.jsx"
-import EmployeeDetailsContainer from "./employee-details-container.jsx"
-import EmployeeListDialog from "./employee-list-dialog.jsx"
+import NewDataDialog from "../file/new-data-dialog.jsx"
+import PayrollManagerDialog from "../file/payroll-manager-dialog.jsx"
+import EmployerDetailsContainer from "../employer/employer-details-container.jsx"
+import FileMenu from "../file/file-menu.jsx"
+import EmployerMenu from "../employer/employer-menu.jsx"
+import EmployeesMenu from "../employee/employees-menu.jsx"
+import AddEmployeeDialog from "../employee/add-employee-dialog.jsx"
+import NoEmployeesDialog from "../employee/no-employees-dialog.jsx"
+import EmployeeDetailsContainer from "../employee/employee-details-container.jsx"
+import EmployeeListDialog from "../employee/employee-list-dialog.jsx"
 
 const Dashboard = () => {
   const [activeMenu, setActiveMenu] = useState(null)
@@ -149,13 +148,10 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="flex-1 overflow-hidden ">
-        <div className="flex flex-col ">
-          <div className="bg-white shadow-sm rounded-sm overflow-hidden h-[1000px]">
+          <div className="bg-white shadow-sm rounded-sm flex flex-1 flex-col min-h-screen">
             <div className="flex items-center justify-between px-2 py-1 bg-gray-800">
               <div className="flex items-center">
-                <button>
+                <button  onClick={handleClickOutside}>
                   <img src={logo || "/placeholder.svg"} style={{ width: "100px", height: "50px" }} />
                 </button>
 
@@ -232,10 +228,19 @@ const Dashboard = () => {
                 <button className="px-2 py-0.5 rounded-none bg-transparent border-none">
                   <img src={d4 || "/placeholder.svg"} style={{ width: "15px", height: "15px" }} />
                 </button>
-                <button className="px-2 py-0.5 rounded-none bg-transparent border-none">
+                <button className="px-2 py-0.5 rounded-none bg-transparent border-none"
+                onClick={() => {
+                  setShowEmployeesMenu(!showEmployeesMenu)
+                  setShowEmployerMenu(false)
+                }}
+                >
                   <img src={d5 || "/placeholder.svg"} style={{ width: "15px", height: "15px" }} />
                 </button>
-                <button className="px-2 py-0.5 rounded-none bg-transparent border-none">
+                <button className="px-2 py-0.5 rounded-none bg-transparent border-none"
+                onClick={() => {
+                  setShowEmployerMenu(!showEmployerMenu)
+                  setShowEmployeesMenu(false)
+                }}>
                   {" "}
                   <FontAwesomeIcon icon={faUserTie} />
                 </button>
@@ -269,14 +274,14 @@ const Dashboard = () => {
                   <ChevronRight size={14} />
                 </button>
               </div>
-              <div className="flex gap-2 pr-4 mr-5 justify-center text-red-600 text-sm" onClick={handleClickOutside}>
-                <img src={d1 || "/placeholder.svg"} style={{ width: "30px", height: "15px" }} />
-                <div className="cursor-pointer" onClick={handleRTIClick}>
+              <div className="h-60" onClick={handleClickOutside}>
+                <div className="cursor-pointer flex gap-2 pr-4 mr-5 justify-center text-red-600 text-sm"
+                //  onClick={handleRTIClick}
+                 >
+                  <img src={d1 || "/placeholder.svg"} style={{ width: "30px", height: "15px" }} />
                   There are RTI returns due - click here for details.
                 </div>
-              </div>
-
-              {/* Employer Details Container */}
+                {/* Employer Details Container */}
               {showEmployerDetailsInContainer && (
                 <div className="mt-4">
                   <EmployerDetailsContainer
@@ -296,12 +301,9 @@ const Dashboard = () => {
                   />
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* New Data File Dialog */}
+            
+            {/* New Data File Dialog */}
       {showNewDataDialog && (
         <NewDataDialog
           setShowNewDataDialog={setShowNewDataDialog}
@@ -313,7 +315,8 @@ const Dashboard = () => {
         />
       )}
 
-      {/* Payroll Manager Dialog */}
+
+ {/* Payroll Manager Dialog */}
       {showPayrollManagerDialog && (
         <PayrollManagerDialog
           setShowPayrollManagerDialog={setShowPayrollManagerDialog}
@@ -322,6 +325,7 @@ const Dashboard = () => {
           setHeaderText={setHeaderText}
         />
       )}
+
 
       {/* No Employees Dialog */}
       {showNoEmployeesDialog && <NoEmployeesDialog onResponse={handleNoEmployeesResponse} />}
@@ -339,7 +343,9 @@ const Dashboard = () => {
           onCancel={() => setShowEmployeeListDialog(false)}
         />
       )}
-    </div>
+              </div>
+            </div>
+          </div>
   )
 }
 

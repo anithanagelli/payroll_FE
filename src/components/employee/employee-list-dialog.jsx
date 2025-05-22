@@ -1,8 +1,15 @@
-"use client"
-
+//employee-list-dialog.jsx
+import { useState } from 'react';
 import { X } from "lucide-react"
 
 const EmployeeListDialog = ({ employees, onSelect, onCancel }) => {
+const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredEmployees = employees.filter(employee => 
+    employee.surname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    employee.forename.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    employee.department.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-md shadow-lg w-[500px]">
@@ -14,7 +21,8 @@ const EmployeeListDialog = ({ employees, onSelect, onCancel }) => {
         </div>
         <div className="p-4">
           <div className="mb-4">
-            <input type="text" className="w-full border rounded p-1 text-sm" placeholder="Search employees..." />
+            <input type="text" className="w-full border rounded p-1 text-sm" placeholder="Search employees..." value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}  />
           </div>
           <div className="max-h-60 overflow-y-auto border rounded">
             <table className="w-full text-xs">
@@ -27,7 +35,7 @@ const EmployeeListDialog = ({ employees, onSelect, onCancel }) => {
                 </tr>
               </thead>
               <tbody>
-                {employees.map((employee) => (
+                {filteredEmployees.map((employee) => (
                   <tr
                     key={employee.id}
                     className="border-t hover:bg-gray-50 cursor-pointer"

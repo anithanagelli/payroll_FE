@@ -1,6 +1,7 @@
+//bank-tab.jsx
 const BankTab = () => {
   return (
-    <div className="grid grid-cols-1">
+    <div className="grid grid-cols-2 gap-4">
       <div className="">
         <label className="block text-xs mb-1">Account name</label>
         <input type="text" className="w-full border rounded p-1 text-xs" />

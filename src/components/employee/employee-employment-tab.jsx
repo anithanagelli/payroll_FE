@@ -1,7 +1,25 @@
-"use client"
+//employee-employment-tab.jsx
+import { useState } from 'react';
 
 const EmployeeEmploymentTab = ({ employee }) => {
+  const [dateStarted, setDateStarted] = useState(employee.dateStarted);
+  const [dateLeft, setDateLeft] = useState('');
+  const [reasonForLeaving, setReasonForLeaving] = useState('');
+  const [starterType, setStarterType] = useState(employee.starterType);
+  const [jobTitle, setJobTitle] = useState('');
+  const [hoursPerWeek, setHoursPerWeek] = useState('35.00');
+  const [weeksNotice, setWeeksNotice] = useState('4');
+  const [daysHoliday, setDaysHoliday] = useState('28.0');
+  const [daysSickness, setDaysSickness] = useState('20');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle the form submission logic here, e.g., send data to parent or backend
+    console.log({ dateStarted, dateLeft, reasonForLeaving, starterType, jobTitle, hoursPerWeek, weeksNotice, daysHoliday, daysSickness });
+  };
+
   return (
+    <form onSubmit={handleSubmit}>
     <div className="grid grid-cols-2 gap-4">
       <div>
         <div className="mb-3">
@@ -84,6 +102,10 @@ const EmployeeEmploymentTab = ({ employee }) => {
         </div>
       </div>
     </div>
+    <button type="submit"
+    className="mt-4 bg-blue-600 text-white px-4 py-1 rounded text-xs"
+    >Save</button>
+    </form>
   )
 }
 

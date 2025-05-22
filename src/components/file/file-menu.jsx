@@ -1,5 +1,4 @@
-"use client"
-
+//file-menu.jsx
 import { ChevronRight, FolderOpen, Save, Settings, Clock, Printer, LogOut } from "lucide-react"
 
 const FileMenu = ({ activeSubmenu, handleSubmenuClick, setShowNewDataDialog, setActiveMenu, setActiveSubmenu }) => {
@@ -12,9 +11,9 @@ const FileMenu = ({ activeSubmenu, handleSubmenuClick, setShowNewDataDialog, set
         <div className="flex items-center">
           <span className="text-sm">New</span>
         </div>
-        <ChevronRight size={14} />
+        {/* <ChevronRight size={14} /> */}
       </div>
-      <div className="flex items-center justify-between px-3 py-1.5 hover:bg-gray-100">
+      {/* <div className="flex items-center justify-between px-3 py-1.5 hover:bg-gray-100">
         <div className="flex items-center">
           <FolderOpen size={14} className="mr-2" />
           <span className="text-sm">Open</span>
@@ -27,9 +26,9 @@ const FileMenu = ({ activeSubmenu, handleSubmenuClick, setShowNewDataDialog, set
           <span className="text-sm">Save</span>
         </div>
         <span className="text-xs text-gray-500">Ctrl+S</span>
-      </div>
+      </div> */}
 
-      <div className="flex items-center justify-between px-3 py-1.5 hover:bg-gray-100">
+      {/* <div className="flex items-center justify-between px-3 py-1.5 hover:bg-gray-100">
         <div className="flex items-center">
           <Settings size={14} className="mr-2" />
           <span className="text-sm">Utilities</span>
@@ -62,7 +61,7 @@ const FileMenu = ({ activeSubmenu, handleSubmenuClick, setShowNewDataDialog, set
           <LogOut size={14} className="mr-2" />
           <span className="text-sm">Exit</span>
         </div>
-      </div>
+      </div> */}
 
       {/* New Submenu */}
       {activeSubmenu === "new" && (
@@ -77,9 +76,9 @@ const FileMenu = ({ activeSubmenu, handleSubmenuClick, setShowNewDataDialog, set
           >
             <span className="text-sm">Create a new blank file</span>
           </div>
-          <div className="flex items-center px-3 py-1.5 hover:bg-gray-100">
-            <span className="text-sm">Create a file for next year</span>
-          </div>
+            {/* <div className="flex items-center px-3 py-1.5 hover:bg-gray-100">
+              <span className="text-sm">Create a file for next year</span>
+            </div> */}
         </div>
       )}
     </div>

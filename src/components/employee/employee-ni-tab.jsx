@@ -1,5 +1,4 @@
-"use client"
-
+//employee-ni-tab.jsx
 const EmployeeNITab = ({ employee }) => {
   return (
     <div className="grid grid-cols-2 gap-4">

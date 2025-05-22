@@ -1,5 +1,4 @@
-"use client"
-
+//add-employee-step1.jsx
 const AddEmployeeStep1 = ({ employeeData, handleInputChange }) => {
   return (
     <div className="space-y-4">
@@ -7,7 +6,7 @@ const AddEmployeeStep1 = ({ employeeData, handleInputChange }) => {
         <label className="block text-xs mb-1">Surname</label>
         <input
           type="text"
-          className="w-full border rounded p-1 text-xs bg-red-100"
+          className="w-full border rounded p-1 text-xs"
           value={employeeData.surname}
           onChange={(e) => handleInputChange("surname", e.target.value)}
         />
@@ -52,8 +51,8 @@ const AddEmployeeStep1 = ({ employeeData, handleInputChange }) => {
       <div>
         <label className="block text-xs mb-1">Date of birth</label>
         <input
-          type="text"
-          className="w-full border rounded p-1 text-xs bg-red-100"
+          type="date"
+          className="w-full border rounded p-1 text-xs"
           placeholder="DD/MM/YYYY"
           value={employeeData.dateOfBirth}
           onChange={(e) => handleInputChange("dateOfBirth", e.target.value)}

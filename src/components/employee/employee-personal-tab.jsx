@@ -1,5 +1,4 @@
-"use client"
-
+//employee-personal-tab
 const EmployeePersonalTab = ({ employee }) => {
   return (
     <div className="grid grid-cols-2 gap-4">
@@ -48,7 +47,7 @@ const EmployeePersonalTab = ({ employee }) => {
           <label className="block text-xs mb-1">Date of birth</label>
           <input type="text" className="w-full border rounded p-1 text-xs" defaultValue={employee.dateOfBirth} />
         </div>
-        <div className="mb-3">
+        <div className="">
           <label className="block text-xs mb-1">Address</label>
           <textarea className="w-full border rounded p-1 text-xs h-20"></textarea>
         </div>

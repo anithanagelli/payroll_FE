@@ -1,16 +1,15 @@
-"use client"
-
+//employer-details-container.jsx
 import { X } from "lucide-react"
 import EmployerTab from "./employer-tab.jsx"
 import TaxOfficeTab from "./tax-office-tab.jsx"
-import BankTab from "./bank-tab.jsx"
-import TermsTab from "./terms-tab.jsx"
-import Class1ANICTab from "./class1a-nic-tab.jsx"
-import AutoEnrolmentTab from "./auto-enrolment-tab.jsx"
+import BankTab from "../employee/bank-tab.jsx"
+import TermsTab from "../employee/terms-tab.jsx"
+import Class1ANICTab from "../employer/class1a-nic-tab.jsx"
+import AutoEnrolmentTab from "../employee/auto-enrolment-tab.jsx"
 
 const EmployerDetailsContainer = ({ activeEmployerTab, setActiveEmployerTab, setShowEmployerDetailsInContainer }) => {
   return (
-    <div className="bg-white rounded-md shadow-lg border">
+    <div className="bg-white rounded-md shadow-lg border mx-auto max-w-[800px] w-full mt-10 px-4">
       <div className="flex justify-between items-center p-2 border-b">
         <h3 className="text-sm font-medium">Employer Details</h3>
         <button onClick={() => setShowEmployerDetailsInContainer(false)} className="text-gray-500 hover:text-gray-700">
@@ -19,7 +18,7 @@ const EmployerDetailsContainer = ({ activeEmployerTab, setActiveEmployerTab, set
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b">
+       <div className="flex overflow-x-auto whitespace-nowrap border-b scrollbar-hide">
         <button
           className={`px-3 py-1 text-xs ${activeEmployerTab === "Employer" ? "bg-gray-200" : ""}`}
           onClick={() => setActiveEmployerTab("Employer")}
@@ -69,13 +68,13 @@ const EmployerDetailsContainer = ({ activeEmployerTab, setActiveEmployerTab, set
       </div>
 
       {/* Dialog Footer */}
-      <div className="flex justify-between p-2 border-t">
-        <div>
+      <div className="flex justify-end p-2 border-t">
+        {/* <div>
           <button className="border rounded px-3 py-1 text-xs mr-2">Notes</button>
           <button className="border rounded px-3 py-1 text-xs">Print</button>
-        </div>
+        </div> */}
         <div>
-          <button className="border rounded px-3 py-1 text-xs mr-2">Help</button>
+          {/* <button className="border rounded px-3 py-1 text-xs mr-2">Help</button> */}
           <button
             className="border rounded px-3 py-1 text-xs mr-2 bg-blue-50"
             onClick={() => setShowEmployerDetailsInContainer(false)}
